@@ -27,7 +27,7 @@ async function updatePost(postId) {
 export function PostDetail({ post }) {
   // replace with useQuery
   // 쿼리 키 설정, fetch 함수 전달 시 익명함수
-  const {data, isLoading, isError, error} = useQuery(`comments${post.id}`, () => fetchComments(post.id));
+  const {data, isLoading, isError, error} = useQuery(['comments', post.id], () => fetchComments(post.id));
 
   if (isLoading) {
     return (<h5>loading....</h5>);
